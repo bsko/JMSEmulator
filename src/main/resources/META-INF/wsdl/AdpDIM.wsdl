@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tns="http://www.raiffeisen.ru/services/AdpDIMSchema/v1" targetNamespace="http://www.raiffeisen.ru/services/AdpDIMSchema/v1">
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:import namespace="http://www.raiffeisen.ru/services/AdpDIMSchema/v1" schemaLocation="AdpDIM.xsd"/>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="CreateAgreementRequest">
+		<wsdl:part name="parameter" element="tns:CreateAgreement"/>
+	</wsdl:message>
+	<wsdl:message name="CreateAgreementResponse">
+		<wsdl:part name="parameter" element="tns:CreateAgreementResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateRegNumberRequest">
+		<wsdl:part name="parameter" element="tns:UpdateRegNumber"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateRegNumberResponse">
+		<wsdl:part name="parameter" element="tns:UpdateRegNumberResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetDocumentRequest">
+		<wsdl:part name="parameter" element="tns:GetDocument"/>
+	</wsdl:message>
+	<wsdl:message name="GetDocumentResponse">
+		<wsdl:part name="parameter" element="tns:GetDocumentResponse"/>
+	</wsdl:message>
+	<wsdl:portType name="AdpDIM">
+		<wsdl:operation name="CreateAgreement">
+			<wsdl:input message="tns:CreateAgreementRequest"/>
+			<wsdl:output message="tns:CreateAgreementResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateRegNumber">
+			<wsdl:input message="tns:UpdateRegNumberRequest"/>
+			<wsdl:output message="tns:UpdateRegNumberResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetDocument">
+			<wsdl:input message="tns:GetDocumentRequest"/>
+			<wsdl:output message="tns:GetDocumentResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="AdpDIM" type="tns:AdpDIM">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="CreateAgreement">
+			<soap:operation soapAction="http://www.raiffeisen.ru/services/AdpDIM/v1/CreateAgreement"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateRegNumber">
+			<soap:operation soapAction="http://www.raiffeisen.ru/services/AdpDIM/v1/UpdateRegNumber"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GetDocument">
+			<soap:operation soapAction="http://www.raiffeisen.ru/services/AdpDIM/v1/GetDocument"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="AdpDIM">
+		<wsdl:port name="AdpDIMPort" binding="tns:AdpDIM">
+			<soap:address location="http://s-msk20-esb003:7830/services/AdpDIM"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

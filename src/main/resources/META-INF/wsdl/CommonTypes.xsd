@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:doc="http://www.raiffeisen.ru/types/dim/Document/v1" targetNamespace="http://www.raiffeisen.ru/types/dim/Document/v1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1">
+	<xsd:complexType name="ct_DocumentProfile">
+		<xsd:annotation>
+			<xsd:documentation>Атрибуты профайла документа</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="docNumber" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>ID карточки Генерального соглашения</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="customerNumber" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>CNUM</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="agrInternalNumber" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Номер генерального соглашения (внутренний номер документа)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="agrDate" type="xsd:date" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Дата заключения генерального соглашения</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="agrTerminationDate" type="xsd:date" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Дата расторжения генерального соглашения</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="agrType" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Тип генерального соглашения</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="agrRegNumber" type="xsd:string" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>Регистрационный номер Генерального соглашения</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ct_Document">
+		<xsd:annotation>
+			<xsd:documentation>Описание документа</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="documentProfile" type="doc:ct_DocumentProfile" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

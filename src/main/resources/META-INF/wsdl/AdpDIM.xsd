@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2013 rel. 2 sp1 (x64) (http://www.altova.com) by CINIMEX-INFORMATIKA (CINIMEX-INFORMATIKA) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.raiffeisen.ru/services/AdpDIMSchema/v1" xmlns:doc="http://www.raiffeisen.ru/types/dim/Document/v1" targetNamespace="http://www.raiffeisen.ru/services/AdpDIMSchema/v1" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:import namespace="http://www.raiffeisen.ru/types/dim/Document/v1" schemaLocation="CommonTypes.xsd"/>
+	<xsd:element name="CreateAgreement">
+		<xsd:annotation>
+			<xsd:documentation>Запрос на Создание карточки Генерального соглашения</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="document" type="doc:ct_Document"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="CreateAgreementResponse">
+		<xsd:annotation>
+			<xsd:documentation>Результат создания карточки Генерального соглашения</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="document" type="doc:ct_Document" nillable="true"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="UpdateRegNumber">
+		<xsd:annotation>
+			<xsd:documentation>Редактирование регистрационного номера Генерального соглашения</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="document" type="doc:ct_Document" nillable="true"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="UpdateRegNumberResponse">
+		<xsd:annotation>
+			<xsd:documentation>Результат редактирования регистрационного номера Генерального соглашения</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="document" type="doc:ct_Document"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="GetDocument">
+		<xsd:annotation>
+			<xsd:documentation>Получение сканкопии Генерального соглашения</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="docNumber" type="xsd:string" minOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="GetDocumentResponse">
+		<xsd:annotation>
+			<xsd:documentation>Результат запроса сканкопии Генерального соглашения</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="responseFileDestination" type="xsd:string" minOccurs="1"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
